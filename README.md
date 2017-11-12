@@ -1,10 +1,10 @@
-# Pwgen
+# Passphrase Generator
 
 A passphrase generator based on website scrapes. Because, why not?
 
 ## Use
 
-There are two steps to generating passphrases: creating a word database to 
+There are two steps to generating passphrases: creating a word database to
 choose  from and generating a password from that list.
 
 ### Build
@@ -22,16 +22,20 @@ a plain text file formatted one URL per line.
 $ python pwgen.py build --out shakespeare.pwgen complete_works_urls.txt
 ```
 
+Scrape a web page with lots of words on it. For example, one of Shakespeare's
+plays (or all of them). MIT has them all online, and that's actually what I
+tested on.
+
 ### Generate
 
 Use this command to generate a passphrase from a database built with the `build`
 command. You can specify the minimum number of characters a chosen word should
-have, the maximum number of characters a chosen word should have, the minimum 
-number of words in the passphrase, the minimum number of characters in the 
+have, the maximum number of characters a chosen word should have, the minimum
+number of words in the passphrase, the minimum number of characters in the
 passphrase, and whether to camel case the generated passphrase.
 
 ```
-$ python pwgen.py generate --min 1 --max 10 --camelcase -n 5 words.pwgen
+$ python pwgen.py generate --min 1 --max 10 --camelcase -n 5 --char words.pwgen
 ```
 
 ## License
